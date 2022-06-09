@@ -1,10 +1,8 @@
 ﻿using BugTrackerUI.Tests;
 using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
@@ -14,9 +12,7 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
         [Fact(DisplayName = "Add the BugList component to Index @add-buglist-to-index")]
         public void AddNavigationToLayoutTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Pages"
-                + Path.DirectorySeparatorChar + "Index.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Pages{Path.DirectorySeparatorChar}Index.razor";
 
             Assert.True(File.Exists(filePath), "`Index.razor` should exist in the Shared folder.");
 

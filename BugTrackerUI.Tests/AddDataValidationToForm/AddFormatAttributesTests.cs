@@ -1,12 +1,7 @@
 ﻿using BugTrackerUI.Tests;
-using HtmlAgilityPack;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using Xunit;
 
 namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
@@ -16,12 +11,11 @@ namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
         [Fact(DisplayName = "Add Format Attributes @add-format-attributes")]
         public void AddFormatAttributesTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                    + Path.DirectorySeparatorChar + "Bug.cs";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Services/Bug.cs";
 
-            Assert.True(File.Exists(filePath), "`Bug.razor` should exist in the project root.");
+            Assert.True(File.Exists(filePath), "`Services/Bug.cs` should exist");
 
-            var bug = TestHelpers.GetClassType("BugTrackerUI.Bug");
+            var bug = TestHelpers.GetClassType("BugTrackerUI.Services.Bug");
 
             var descriptionAttributes = bug.GetProperty("Description").GetCustomAttributesData();
             var descriptionRequired = descriptionAttributes.FirstOrDefault(x => x.AttributeType == typeof(MinLengthAttribute));

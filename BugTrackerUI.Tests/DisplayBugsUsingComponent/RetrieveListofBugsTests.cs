@@ -1,15 +1,9 @@
-﻿using BugTrackerUI.Pages;
-using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-using BugTrackerUI.Tests;
 using System.Text.RegularExpressions;
+using Xunit;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
@@ -18,9 +12,7 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
         [Fact(DisplayName = "Retrieve list of bugs @retrieve-buglist")]
         public void RetrieveListofBugsTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Components"
-                + Path.DirectorySeparatorChar + "BugList.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Components{Path.DirectorySeparatorChar}BugList.razor";
 
             Assert.True(File.Exists(filePath), "`BugList.razor` should exist in the Pages folder.");
 

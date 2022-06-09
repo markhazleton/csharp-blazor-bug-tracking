@@ -1,13 +1,8 @@
-﻿using HtmlAgilityPack;
-using System;
-using System.Collections.Generic;
+﻿using BugTrackerUI.Tests;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using Xunit;
-using BugTrackerUI.Tests;
 
 namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
 {
@@ -16,12 +11,11 @@ namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
         [Fact(DisplayName = "Add Required Attributes @add-required-attributes")]
         public void AddRequiredAttributesTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                    + Path.DirectorySeparatorChar + "Bug.cs";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}/Services/Bug.cs";
 
-            Assert.True(File.Exists(filePath), "`Bug.razor` should exist in the project root.");
+            Assert.True(File.Exists(filePath), "/Services/Bug.cs should exist.");
 
-            var bug = TestHelpers.GetClassType("BugTrackerUI.Bug");
+            var bug = TestHelpers.GetClassType("BugTrackerUI.Services.Bug");
 
             var titleAttributes = bug.GetProperty("Title").GetCustomAttributesData();
             var titleRequired = titleAttributes.FirstOrDefault(x => x.AttributeType == typeof(RequiredAttribute));

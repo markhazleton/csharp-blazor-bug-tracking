@@ -1,14 +1,8 @@
-﻿using BugTrackerUI.Pages;
-using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using BugTrackerUI.Tests;
 
 namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
@@ -17,9 +11,7 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
         [Fact(DisplayName = "Persist the new bug @persist-new-bug")]
         public void PersistNewBugTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                    + Path.DirectorySeparatorChar + "Pages"
-                    + Path.DirectorySeparatorChar + "NewBug.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Pages{Path.DirectorySeparatorChar}NewBug.razor";
 
             Assert.True(File.Exists(filePath), "`NewBug.razor` was not found.");
 

@@ -1,12 +1,8 @@
-﻿using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using Xunit;
-using BugTrackerUI.Tests;
 
 namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
@@ -15,9 +11,7 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
         [Fact(DisplayName = "Inject the Bug Service into NewBug Component @inject-bugservice-newbug-component")]
         public void InjectBugServiceTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Pages"
-                + Path.DirectorySeparatorChar + "NewBug.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Pages{Path.DirectorySeparatorChar}NewBug.razor";
 
             Assert.True(File.Exists(filePath), "`NewBug.razor` should exist in the Pages folder.");
 

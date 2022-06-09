@@ -1,11 +1,9 @@
-﻿using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
+using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
-using BugTrackerUI.Tests;
 
 namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 {
@@ -14,9 +12,7 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
         [Fact(DisplayName = "Add the Edit Form Input Components @add-editform-inputs")]
         public void AddEditFormInputsTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Pages"
-                + Path.DirectorySeparatorChar + "NewBug.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Pages{Path.DirectorySeparatorChar}NewBug.razor";
 
             Assert.True(File.Exists(filePath), "`NewBug.razor` should exist in the `Pages` folder.");
 

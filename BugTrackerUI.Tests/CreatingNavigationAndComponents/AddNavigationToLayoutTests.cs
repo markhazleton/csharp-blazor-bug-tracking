@@ -1,10 +1,8 @@
 ﻿using BugTrackerUI.Tests;
 using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
@@ -14,9 +12,7 @@ namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
         [Fact(DisplayName = "Add the LeftNav Component to the MainLayout Component @add-leftnav-to-mainlayout")]
         public void AddNavigationToLayoutTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Shared"
-                + Path.DirectorySeparatorChar + "MainLayout.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Shared{Path.DirectorySeparatorChar}MainLayout.razor";
 
             Assert.True(File.Exists(filePath), "`MainLayout.razor` should exist in the Shared folder.");
 

@@ -1,11 +1,8 @@
-﻿using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
-using BugTrackerUI.Tests;
 
 namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
@@ -14,10 +11,9 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
         [Fact(DisplayName = "Register the BugService @register-bug-service")]
         public void RegisterTheBugServiceTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                    + Path.DirectorySeparatorChar + "Startup.cs";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Program.cs";
 
-            Assert.True(File.Exists(filePath), "`Startup.cs` was not found.");
+            Assert.True(File.Exists(filePath), "`Program.cs` was not found.");
 
             string file;
             using (var streamReader = new StreamReader(filePath))

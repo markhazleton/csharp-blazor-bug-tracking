@@ -1,10 +1,8 @@
 ﻿using BugTrackerUI.Tests;
 using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
@@ -14,9 +12,7 @@ namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
         [Fact(DisplayName = "Add the NavLink Match Attribute @add-navlink-match")]
         public void AddNavLinkMatchTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Shared"
-                + Path.DirectorySeparatorChar + "LeftNav.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Shared{Path.DirectorySeparatorChar}LeftNav.razor";
 
             Assert.True(File.Exists(filePath), "`LeftNav.razor` should exist in the Shared folder.");
 

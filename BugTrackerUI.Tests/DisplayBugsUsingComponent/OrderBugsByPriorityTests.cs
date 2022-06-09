@@ -1,15 +1,8 @@
-﻿using BugTrackerUI.Pages;
-using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using BugTrackerUI.Tests;
-using System.Text.RegularExpressions;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
@@ -18,9 +11,7 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
         [Fact(DisplayName = "Order the list of bugs by priority @order-buglist")]
         public void OrderBugsByPriorityTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Components"
-                + Path.DirectorySeparatorChar + "BugList.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Components{Path.DirectorySeparatorChar}BugList.razor";
 
             Assert.True(File.Exists(filePath), "`BugList.razor` should exist in the Pages folder.");
 

@@ -1,12 +1,8 @@
-﻿using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using Xunit;
-using BugTrackerUI.Tests;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
@@ -15,9 +11,7 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
         [Fact(DisplayName = "Inject the Bug Service into BugList component @inject-bugservice-buglist-component")]
         public void InjectBugServiceTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Components"
-                + Path.DirectorySeparatorChar + "BugList.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Components{Path.DirectorySeparatorChar}BugList.razor";
 
             Assert.True(File.Exists(filePath), "`BugList.razor` should exist in the Components folder.");
 

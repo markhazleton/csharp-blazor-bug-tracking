@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿namespace BugTrackerUI.Services;
 
-namespace BugTrackerUI
+public interface IBugService
 {
-    public interface IBugService
-    {
-        List<Bug> GetBugs();
+    List<Bug> GetBugs();
 
-        void AddBug(Bug newBug);
-    }
+    void AddBug(Bug newBug);
 }

@@ -1,10 +1,9 @@
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Xunit;
-using Microsoft.AspNetCore.Components;
 
 namespace BugTrackerUI.Tests
 {
@@ -22,7 +21,7 @@ namespace BugTrackerUI.Tests
 
             var found = subclasses.FirstOrDefault(x => x.FullName == fullName);
 
-            if(found == null)
+            if (found == null)
             {
                 found = assembly.GetTypes().FirstOrDefault(x => x.FullName == fullName);
             }
@@ -32,7 +31,7 @@ namespace BugTrackerUI.Tests
 
         public static string GetRootString()
         {
-            return ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar;
+            return $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}";
         }
     }
 }

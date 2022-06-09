@@ -1,10 +1,8 @@
 ﻿using BugTrackerUI.Tests;
 using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
@@ -14,9 +12,7 @@ namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
         [Fact(DisplayName = "Add the Validation Display Component @add-validation-display-component")]
         public void AddValidationSummaryComponentTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Pages"
-                + Path.DirectorySeparatorChar + "NewBug.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Pages{Path.DirectorySeparatorChar}NewBug.razor";
 
             Assert.True(File.Exists(filePath), "`NewBug.razor` should exist in the Pages folder.");
 

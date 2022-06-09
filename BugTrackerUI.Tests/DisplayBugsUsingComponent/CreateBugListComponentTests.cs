@@ -1,10 +1,8 @@
 ﻿using BugTrackerUI.Tests;
 using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
@@ -14,9 +12,7 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
         [Fact(DisplayName = "Create the BugList Component @create-buglist-component")]
         public void CreateNewBugComponentTest()
         {
-            var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
-                + Path.DirectorySeparatorChar + "Components"
-                + Path.DirectorySeparatorChar + "BugList.razor";
+            var filePath = $"{TestHelpers.GetRootString()}BugTrackerUI{Path.DirectorySeparatorChar}Components{Path.DirectorySeparatorChar}BugList.razor";
 
             Assert.True(File.Exists(filePath), "`BugList.razor` should exist in the Components folder.");
 
