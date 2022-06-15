@@ -1,4 +1,4 @@
-﻿@model CarvedRock.Admin.Data.Category
+﻿@model CategoryModel
 
 @{
     ViewData["Title"] = "Details";
@@ -15,6 +15,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaxPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaxPrice)
         </dd>
     </dl>
 </div>

@@ -1,4 +1,3 @@
-
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -18,17 +17,7 @@ public class ProductLogic : IProductLogic
     public async Task<List<ProductModel>> GetAllProducts()
     {
         var products = await _repo.GetAllProductsAsync();
-
-        // converts products from DB to product models
         return products.Select(ProductModel.FromProduct).ToList();
-
-        // the above is more terse syntax for:
-        //var models = new List<ProductModel>();
-        //foreach (var product in products)
-        //{
-        //    models.Add(ProductModel.FromProduct(product));
-        //}
-        //return models;
     }
 
     public async Task<ProductModel?> GetProductById(int id)

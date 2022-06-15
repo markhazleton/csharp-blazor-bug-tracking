@@ -9,6 +9,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 builder.Services.AddDbContext<ProductContext>();
 builder.Services.AddScoped<ICarvedRockRepository, CarvedRockRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
+builder.Services.AddScoped<ICategoryLogic, CategoryLogic>();
 
 var app = builder.Build();
 

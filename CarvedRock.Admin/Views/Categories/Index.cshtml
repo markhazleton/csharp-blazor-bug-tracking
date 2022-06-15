@@ -1,14 +1,13 @@
-﻿@model IEnumerable<CarvedRock.Admin.Data.Category>
+﻿@model IEnumerable<CategoryModel>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Categories</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<p><a class="btn btn-info" role="button" asp-action="Create">Create New</a></p>
+
 <table class="table">
     <thead>
         <tr>

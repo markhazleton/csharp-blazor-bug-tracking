@@ -70,4 +70,41 @@ public class CarvedRockRepository : ICarvedRockRepository
     {
         return await _context.Categories.Where(w => w.Id == categoryId).FirstOrDefaultAsync() ?? new Category() { Id = 0, Name = "None" };
     }
+
+    public async Task<Category> AddCategoryAsync(Category category)
+    {
+        _context.Categories.Add(category);
+        await _context.SaveChangesAsync();
+        return category; // will have updated ID value
+    }
+
+    public async Task RemoveCategoryAsync(int id)
+    {
+        var category = await _context.Categories
+                        .FirstOrDefaultAsync(p => p.Id == id);
+        if (category != null)
+        {
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    public async Task UpdateCategoryAsync(Category categoryToSave)
+    {
+        try
+        {
+            _context.Update(categoryToSave);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (_context.Categories.Any(e => e.Id == categoryToSave.Id))
+            {
+                // product exists and update exception is real
+                throw;
+            }
+            // caught and swallowed exception can occur if 
+            // the other update was a delete
+        }
+    }
 }
