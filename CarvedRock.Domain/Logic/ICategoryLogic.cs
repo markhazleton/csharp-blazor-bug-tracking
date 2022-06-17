@@ -1,4 +1,5 @@
-namespace CarvedRock.Admin.Logic;
+
+namespace CarvedRock.Domain.Logic;
 public interface ICategoryLogic
 {
     Task<List<CategoryModel>> GetAllCategories();

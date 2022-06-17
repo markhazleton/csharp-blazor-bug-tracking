@@ -1,5 +1,6 @@
-namespace CarvedRock.Admin.Logic;
+using CarvedRock.Domain.Data;
 
+namespace CarvedRock.Domain.Logic;
 public class CategoryLogic : ICategoryLogic
 {
     private readonly ICarvedRockRepository _repo;
@@ -13,27 +14,27 @@ public class CategoryLogic : ICategoryLogic
     {
         var categoryToSave = CategoryToAdd.ToCategory();
         categoryToSave = await _repo.AddCategoryAsync(categoryToSave);
-        return CategoryModel.FromCategory(categoryToSave);
+        return categoryToSave.ToModel();
     }
 
     public async Task<List<CategoryModel>> GetAllCategories()
     {
         var cats = await _repo.GetAllCategoriesAsync();
-        return cats.Select(CategoryModel.FromCategory).ToList();
+        return cats.Select(s => s.ToModel()).ToList();
     }
 
     public async Task<CategoryModel?> GetCategoryById(int? id)
     {
         if (id == null) return null;
         var category = await _repo.GetCategoryByIdAsync(id.Value);
-        return category == null ? null : CategoryModel.FromCategory(category);
+        return category == null ? null : category.ToModel();
     }
 
     public async Task<CategoryModel?> GetCategoryById(int id)
     {
         if (id == 0) return null;
         var category = await _repo.GetCategoryByIdAsync(id);
-        return category == null ? null : CategoryModel.FromCategory(category);
+        return category == null ? null : category.ToModel();
     }
 
     public async Task RemoveCategory(int id)

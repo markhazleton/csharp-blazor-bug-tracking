@@ -1,4 +1,4 @@
-
+using CarvedRock.Domain.Data;
 using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);

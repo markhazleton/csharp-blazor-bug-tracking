@@ -1,5 +1,5 @@
 
-namespace CarvedRock.Admin.Models;
+namespace CarvedRock.Domain.Models;
 
 public class ErrorViewModel
 {

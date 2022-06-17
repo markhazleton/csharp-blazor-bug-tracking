@@ -1,5 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 
-namespace CarvedRock.Admin.Repository;
+namespace CarvedRock.Domain.Data;
 
 public class CarvedRockRepository : ICarvedRockRepository
 {

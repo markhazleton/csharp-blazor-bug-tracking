@@ -1,7 +1,7 @@
+using CarvedRock.Domain.Data;
 using FluentValidation;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace CarvedRock.Admin.Logic;
+namespace CarvedRock.Domain.Logic;
 
 public class ProductLogic : IProductLogic
 {
@@ -17,13 +17,17 @@ public class ProductLogic : IProductLogic
     public async Task<List<ProductModel>> GetAllProducts()
     {
         var products = await _repo.GetAllProductsAsync();
-        return products.Select(ProductModel.FromProduct).ToList();
+        return products.Select(s => s.ToModel()).ToList();
     }
 
     public async Task<ProductModel?> GetProductById(int id)
     {
-        var product = await _repo.GetProductByIdAsync(id);
-        return product == null ? null : ProductModel.FromProduct(product);
+        var product = (await _repo.GetProductByIdAsync(id)).ToModel();
+
+        if (product.Id == 0) return null;
+
+        product.AvailableCategories = await GetAvailableCategoriesFromDb();
+        return product ?? null;
     }
 
     public async Task AddNewProduct(ProductModel productToAdd)
@@ -49,11 +53,11 @@ public class ProductLogic : IProductLogic
         return new ProductModel { AvailableCategories = await GetAvailableCategoriesFromDb() };
     }
 
-    private async Task<List<SelectListItem>> GetAvailableCategoriesFromDb()
+    private async Task<List<LookupModel>> GetAvailableCategoriesFromDb()
     {
         var cats = await _repo.GetAllCategoriesAsync();
-        var returnList = new List<SelectListItem> { new("None", string.Empty) };
-        var availCatList = cats.Select(cat => new SelectListItem(cat.Name, cat.Id.ToString()));
+        var returnList = new List<LookupModel> { new("None", string.Empty) };
+        var availCatList = cats.Select(cat => new LookupModel(cat.Name, cat.Id.ToString()));
         returnList.AddRange(availCatList);
         return returnList;
     }

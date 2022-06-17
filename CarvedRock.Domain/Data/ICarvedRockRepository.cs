@@ -1,5 +1,5 @@
 
-namespace CarvedRock.Admin.Repository;
+namespace CarvedRock.Domain.Data;
 public interface ICarvedRockRepository
 {
     Task<List<Product>> GetAllProductsAsync();

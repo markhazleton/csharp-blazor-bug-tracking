@@ -1,5 +1,5 @@
 
-namespace CarvedRock.Admin.Logic;
+namespace CarvedRock.Domain.Logic;
 public interface IProductLogic
 {
     Task<List<ProductModel>> GetAllProducts();

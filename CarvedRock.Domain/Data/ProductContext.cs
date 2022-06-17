@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
-namespace CarvedRock.Admin.Data;
+namespace CarvedRock.Domain.Data;
 
 public class ProductContext : DbContext
 {

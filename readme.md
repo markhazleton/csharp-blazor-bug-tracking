@@ -61,3 +61,5 @@ the products that it sells.
 * **Identity**
   * [General Docs](https://docs.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-6.0)
   * [Scaffolding Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity)
+* ** Minimal Api
+  * [Minimal Api Docs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0)

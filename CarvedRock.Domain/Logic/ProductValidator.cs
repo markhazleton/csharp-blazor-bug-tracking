@@ -1,6 +1,7 @@
-﻿using FluentValidation;
+﻿using CarvedRock.Domain.Data;
+using FluentValidation;
 
-namespace CarvedRock.Admin.Logic;
+namespace CarvedRock.Domain.Logic;
 
 public class ProductValidator : AbstractValidator<ProductModel>
 {

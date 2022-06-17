@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CarvedRock.Admin.Data;
+namespace CarvedRock.Domain.Data;
 public class Product
 {
     public int Id { get; set; }
