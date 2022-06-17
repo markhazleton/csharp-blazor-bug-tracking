@@ -1,0 +1,33 @@
+﻿<h3>All Products</h3>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var item in Products)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.CategoryName</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>
+
+
+@code {
+
+    [Inject]
+    public IProductLogic BugService { get; set; }
+    public List<ProductModel> Products { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Products = BugService.GetAllProducts().Result.OrderBy(x => x.Name).ToList();
+    }
+}

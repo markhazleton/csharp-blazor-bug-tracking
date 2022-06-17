@@ -1,0 +1,27 @@
+﻿@page "/new-product"
+<h3>Add New Product</h3>
+
+<EditForm Model="AddBug" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText @bind-Value="@AddBug.Name" placeholder="Enter Name"></InputText>
+    <InputText @bind-Value="@AddBug.Description" placeholder="Enter Description" ></InputText>
+    <InputNumber @bind-Value="@AddBug.Price" placeholder="Enter Price" ></InputNumber>
+    <button type="submit">Add Product</button>
+</EditForm>
+
+@code {
+    [Inject]
+    public IProductLogic ProductLogic { get; set; } 
+
+    [Inject]
+    public NavigationManager NavService { get; set; }
+
+    public ProductModel AddBug { get; set; } = new ProductModel();
+
+    protected void HandleValidSubmit()
+    {
+        ProductLogic.AddNewProduct(AddBug);
+        NavService.NavigateTo("");
+    }
+}
