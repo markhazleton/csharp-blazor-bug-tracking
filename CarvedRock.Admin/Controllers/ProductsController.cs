@@ -4,6 +4,7 @@ using FluentValidation.Results;
 
 namespace CarvedRock.Admin.Controllers;
 
+[Authorize]
 public class ProductsController : Controller
 {
     private readonly IProductLogic _logic;

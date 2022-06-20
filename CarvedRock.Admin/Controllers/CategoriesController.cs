@@ -1,6 +1,7 @@
 ﻿
 namespace CarvedRock.Admin.Controllers;
 
+[Authorize]
 public class CategoriesController : Controller
 {
     private readonly ICategoryLogic _logic;
