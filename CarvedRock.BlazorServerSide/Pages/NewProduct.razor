@@ -12,16 +12,16 @@
 
 @code {
     [Inject]
-    public IProductLogic ProductLogic { get; set; } 
+    public IProductLogic? ProductLogic { get; set; } 
 
     [Inject]
-    public NavigationManager NavService { get; set; }
+    public NavigationManager? NavService { get; set; }
 
     public ProductModel AddBug { get; set; } = new ProductModel();
 
     protected void HandleValidSubmit()
     {
-        ProductLogic.AddNewProduct(AddBug);
-        NavService.NavigateTo("");
+        ProductLogic?.AddNewProduct(AddBug);
+        NavService?.NavigateTo("");
     }
 }
