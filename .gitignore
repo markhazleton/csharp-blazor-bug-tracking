@@ -8,6 +8,8 @@ yarn-error.log*
 bin/
 obj/
 .vs/
+.cr/
+
 
 # Runtime data
 pids
