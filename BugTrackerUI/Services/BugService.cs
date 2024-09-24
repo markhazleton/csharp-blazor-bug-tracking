@@ -2,7 +2,7 @@
 
 public class BugService : IBugService
 {
-    private readonly List<Bug> Bugs = new();
+    private readonly List<Bug> Bugs = [];
 
     public void AddBug(Bug newBug)
     {
