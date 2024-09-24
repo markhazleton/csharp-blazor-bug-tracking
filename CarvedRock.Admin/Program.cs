@@ -1,6 +1,7 @@
 using CarvedRock.Admin.Areas.Identity.Data;
 using CarvedRock.Admin.Data;
-using CarvedRock.Domain.Data;
+using CarvedRock.Admin.Domain.Data;
+using CarvedRock.Admin.Domain.Logic;
 using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,12 @@ builder.Services.AddDefaultIdentity<AdminUser>(options => options.SignIn.Require
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
-builder.Services.AddDbContext<ProductContext>();
+
+var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+var DbPath = Path.Join(path, builder.Configuration.GetConnectionString("ProductDbFilename"));
+builder.Services.AddDbContext<ProductContext>(options =>
+    options.UseSqlite($"Data Source={DbPath}", b => b.MigrationsAssembly("CarvedRock.Admin")));
+
 builder.Services.AddScoped<ICarvedRockRepository, CarvedRockRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 builder.Services.AddScoped<ICategoryLogic, CategoryLogic>();

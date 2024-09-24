@@ -1,3 +1,4 @@
+using CarvedRock.Admin.Domain.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarvedRock.Admin;

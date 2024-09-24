@@ -1,0 +1,5 @@
+// Import Bootstrap variables first to ensure availability to Bootswatch
+@import "../../node_modules/bootswatch/dist/lux/_variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootswatch/dist/lux/bootswatch";
+

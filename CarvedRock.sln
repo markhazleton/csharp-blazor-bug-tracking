@@ -5,16 +5,14 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRock.Admin", "CarvedRock.Admin\CarvedRock.Admin.csproj", "{13AD39D8-8040-40E3-94FD-A08C3DA3686A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRock.Api", "CarvedRock.Api\CarvedRock.Api.csproj", "{61A52B2E-C1E4-4FA4-AEEF-69864A9EB0F6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRock.Domain", "CarvedRock.Domain\CarvedRock.Domain.csproj", "{2D992C61-57BC-4DDA-932E-930479A234AA}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D796655-BB92-4518-8A6E-180968F45B55}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRock.BlazorServerSide", "CarvedRock.BlazorServerSide\CarvedRock.BlazorServerSide.csproj", "{B6746743-E485-4508-8E38-ACABC98F3303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRock.Api", "CarvedRock.Api\CarvedRock.Api.csproj", "{C05C5CA5-84D7-4335-9914-5654DDA7DFE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarvedRock.BlazorServerSide", "CarvedRock.BlazorServerSide\CarvedRock.BlazorServerSide.csproj", "{E8B15B55-CEC1-465D-BA05-1DA3467FFF11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,18 +24,14 @@ Global
 		{13AD39D8-8040-40E3-94FD-A08C3DA3686A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13AD39D8-8040-40E3-94FD-A08C3DA3686A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13AD39D8-8040-40E3-94FD-A08C3DA3686A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61A52B2E-C1E4-4FA4-AEEF-69864A9EB0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61A52B2E-C1E4-4FA4-AEEF-69864A9EB0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61A52B2E-C1E4-4FA4-AEEF-69864A9EB0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61A52B2E-C1E4-4FA4-AEEF-69864A9EB0F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D992C61-57BC-4DDA-932E-930479A234AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D992C61-57BC-4DDA-932E-930479A234AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D992C61-57BC-4DDA-932E-930479A234AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D992C61-57BC-4DDA-932E-930479A234AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6746743-E485-4508-8E38-ACABC98F3303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6746743-E485-4508-8E38-ACABC98F3303}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6746743-E485-4508-8E38-ACABC98F3303}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6746743-E485-4508-8E38-ACABC98F3303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C05C5CA5-84D7-4335-9914-5654DDA7DFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05C5CA5-84D7-4335-9914-5654DDA7DFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05C5CA5-84D7-4335-9914-5654DDA7DFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05C5CA5-84D7-4335-9914-5654DDA7DFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B15B55-CEC1-465D-BA05-1DA3467FFF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B15B55-CEC1-465D-BA05-1DA3467FFF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B15B55-CEC1-465D-BA05-1DA3467FFF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B15B55-CEC1-465D-BA05-1DA3467FFF11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

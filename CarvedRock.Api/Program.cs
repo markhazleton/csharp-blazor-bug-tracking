@@ -1,6 +1,6 @@
-using CarvedRock.Domain.Data;
-using CarvedRock.Domain.Logic;
-using CarvedRock.Domain.Models;
+using CarvedRock.Admin.Domain.Data;
+using CarvedRock.Admin.Domain.Logic;
+using CarvedRock.Admin.Domain.Models;
 using FluentValidation;
 using Microsoft.OpenApi.Models;
 

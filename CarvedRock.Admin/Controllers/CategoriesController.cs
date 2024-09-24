@@ -1,4 +1,6 @@
-﻿
+﻿using CarvedRock.Admin.Domain.Logic;
+using CarvedRock.Admin.Domain.Models;
+
 namespace CarvedRock.Admin.Controllers;
 
 [Authorize]
