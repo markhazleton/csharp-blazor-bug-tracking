@@ -1,7 +1,6 @@
 using CarvedRock.Admin.Domain.Logic;
 using CarvedRock.Admin.Domain.Models;
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 
 namespace CarvedRock.Admin.Controllers;
@@ -40,8 +39,10 @@ public class ProductsController : Controller
         }
         catch (ValidationException valEx)
         {
-            var results = new ValidationResult(valEx.Errors);
-            results.AddToModelState(ModelState, null);
+            foreach (var error in valEx.Errors)
+            {
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            }
             await _logic.GetAvailableCategories(product);
             return View(product);
         }
