@@ -9,13 +9,13 @@
     "compile-scss": "sass wwwroot/Styles/main.scss wwwroot/css/style.css"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.8"
   },
   "devDependencies": {
-    "bootswatch": "^5.3.3",
+    "bootswatch": "^5.3.8",
     "clean-css-cli": "^5.6.3",
     "ncp": "^2.0.0",
-    "sass": "^1.80.4",
+    "sass": "^1.97.1",
     "uglify-js": "^3.19.3"
   }
 }
