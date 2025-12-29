@@ -3,13 +3,16 @@ using CarvedRock.Admin.Data;
 using CarvedRock.Admin.Domain.Data;
 using CarvedRock.Admin.Domain.Logic;
 using FluentValidation;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AdminContext>(); ;
+builder.Services.AddDbContext<AdminContext>();
 
-builder.Services.AddDefaultIdentity<AdminUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<AdminContext>(); ;
+builder.Services.AddIdentity<AdminUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AdminContext>()
+    .AddDefaultUI()
+    .AddDefaultTokenProviders();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -46,7 +49,7 @@ app.UseHsts();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthentication(); ;
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllerRoute(
